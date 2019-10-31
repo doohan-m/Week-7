@@ -2,13 +2,21 @@
 using the STL containers as well as timing, assert and sleep.
 */
 #include <iostream>
+
+// Sequence containers
+#include <array>  // 
 #include <vector>
 #include <deque>  // std::queue + std::priority_queue
+#include <forward_list> 
 #include <list>
+
 #include <stack>
 #include <queue>
+// Associative containers:
 #include <set>  // std::set + std::multiset
 #include <map> // std::map + std::multimap
+#include <unordered_set> // std::unordered_set + std::unordered_multiset
+#include <unordered_map> // std:: unordered_map + std::unordered_multimap
 #include <cassert>
 #include <ctime>
 
