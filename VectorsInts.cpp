@@ -2,7 +2,6 @@
 using the STL containers as well as timing, assert and sleep.
 */
 #include <iostream>
-#include <conio.h>
 #include <vector>
 #include <deque>  // std::queue + std::priority_queue
 #include <list>
@@ -12,7 +11,6 @@ using the STL containers as well as timing, assert and sleep.
 #include <map> // std::map + std::multimap
 #include <cassert>
 #include <ctime>
-#include <windows.h> // For sleep
 
 
 using namespace std;
@@ -53,6 +51,8 @@ int main ()
     cout << ' ' << *it;
   cout << '\n';
   
+  std::cin.get();  //Used for pausing the program until keyboard input
+
   // Try other containers: deque
   deque<int> sixth;
   int i = 1;
@@ -68,6 +68,8 @@ int main ()
   for (deque<int>::iterator it = sixth.begin(); it != sixth.end(); ++it)
 	  cout << ' ' << *it;
   cout << '\n';
+
+  std::cin.get();  //Used for pausing the program until keyboard input
 
   // List
   list<int> seventh;
@@ -94,6 +96,7 @@ int main ()
 	  cout << ' ' << *it;
   cout << '\n';
 
+  std::cin.get();  //Used for pausing the program until keyboard input
 
   // Stack
   stack<int> eighth;
@@ -109,6 +112,8 @@ int main ()
   }
   cout << '\n';
   
+  std::cin.get();  //Used for pausing the program until keyboard input
+
   // Queue
   queue<int> ninth;
   i = 1;
@@ -127,9 +132,10 @@ int main ()
   }
   cout << '\n';
 
+  std::cin.get();  //Used for pausing the program until keyboard input
 
   
-  // Set
+  // Set - example of associative container
   set<int> tenth;
   set<int>::iterator itset;
   pair<set<int>::iterator, bool> ret;
@@ -155,6 +161,7 @@ int main ()
 	  cout << ' ' << *itset;
   cout << '\n';
 
+  std::cin.get();  //Used for pausing the program until keyboard input
 
   
 // Map: example from http://www.cplusplus.com/reference/map/map/insert/
@@ -195,6 +202,9 @@ int main ()
   for (it2 = anothermap.begin(); it2 != anothermap.end(); ++it2)
 	  cout << it2->first << " => " << it2->second << '\n';
   
+    std::cin.get();  //Used for pausing the program until keyboard input
+
+
   // Priority queue, first argument are the 
   priority_queue<int> twelfth(myints, myints+4);  // Inserts everything from address of myints to address of myints+4
   cout << endl << "priority queue contains items in decreasing priority:";
@@ -208,7 +218,6 @@ int main ()
   }
   cout << '\n';
 
-  //Sleep(2000); //Units: milliseconds
   time_t end_time = time(NULL);
   double seconds = difftime(end_time, start_time);
   cout << "duration of this program in seconds is: " << seconds << endl;
@@ -217,7 +226,7 @@ int main ()
   clock_t duration_clock = end_time_clock - start_time_clock;
   cout << "duration of this program in seconds by CPU clock is: " << ((float)duration_clock / CLOCKS_PER_SEC) << endl;
   
-  _getch();
+  std::cin.get();  //Used for pausing the program until keyboard input
 
   return 0;
 }
