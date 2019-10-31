@@ -7,9 +7,6 @@ void myfunction (int i) {  // function:
   std::cout << ' ' << i;
 }
 
-struct myclass {           // function object type:
-  void operator() (int i) {std::cout << ' ' << i;}
-} myobject;
 
 int main () {
   std::vector<int> myvector;
@@ -19,11 +16,6 @@ int main () {
 
   std::cout << "myvector contains:";
   for_each (myvector.begin(), myvector.end(), myfunction);
-  std::cout << '\n';
-
-  // or:
-  std::cout << "myvector contains:";
-  for_each (myvector.begin(), myvector.end(), myobject);
   std::cout << '\n';
 
   return 0;
