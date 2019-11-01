@@ -1,6 +1,5 @@
 #include <iostream>
 #include <iomanip>
-#include <conio.h>
 
 using namespace std;
 
@@ -22,33 +21,36 @@ double Mult(double a, double b)
 int main()
 {
 	double (*FcnPtr)(double, double);
+	
+	cout.setf(ios::showpoint | ios::right |ios::fixed | ios:: uppercase | ios::showpos);
+	cout << setw(12) << setprecision(5);
+	std::cout << "Add function is at \t" << hex << reinterpret_cast<unsigned int *>(&Add) << std::endl;
+	std::cout << "Sub function is at \t" << hex << reinterpret_cast<unsigned int *>(&Sub) << std::endl;
+	std::cout << "Mult function is at \t" << hex << reinterpret_cast<unsigned int *>(&Mult) << std::endl;
 
-	cout << "Add function is at \t" << hex << Add << endl;
-	cout << "Sub function is at \t" << hex << Sub << endl;
-	cout << "Mult function is at \t" << hex << Mult << endl;
+  	std::cin.get();  //Used for pausing the program until keyboard input
 
-	_getch();
 	FcnPtr = Add;
 
-	cout << "After 'FcnPtr = Add' FcnPtr is pointing to \t" << hex << FcnPtr << endl;
+	std::cout << "After 'FcnPtr = Add' FcnPtr is pointing to \t" << hex << reinterpret_cast<unsigned int *>(FcnPtr) << std::endl;
 
-	cout << "FcnPtr(10.0,20.0) gives " << FcnPtr(10.0,20.0) << endl;
+	std::cout << "FcnPtr(10.0,20.0) gives " << FcnPtr(10.0,20.0) << std::endl;
 
 	FcnPtr = Sub;
 
-	cout << "After 'FcnPtr = Sub' FcnPtr is pointing to \t" << hex << FcnPtr << endl;
+	std::cout << "After 'FcnPtr = Sub' FcnPtr is pointing to \t" << hex << reinterpret_cast<unsigned int *>(FcnPtr) << std::endl;
 
-	cout << "FcnPtr(10.0,20.0) gives " << FcnPtr(10.0,20.0) << endl;
+	std::cout << "FcnPtr(10.0,20.0) gives " << FcnPtr(10.0,20.0) << std::endl;
 
 	FcnPtr = Mult;
 
-	cout << "After 'FcnPtr = Mult' FcnPtr is pointing to \t" << hex << FcnPtr << endl;
+	std::cout << "After 'FcnPtr = Mult' FcnPtr is pointing to \t" << hex << reinterpret_cast<unsigned int *>(FcnPtr) << std::endl;
 
-	cout << "FcnPtr(10.0,20.0) gives " << FcnPtr(10.0,20.0) << endl;
+	std::cout << "FcnPtr(10.0,20.0) gives " << FcnPtr(10.0,20.0) << std::endl;
 
-	cout << "and finally address of main() is \t\t" << hex << main << endl;
+	std::cout << "and finally address of main() is \t\t" << hex << reinterpret_cast<unsigned int *>(&main) << std::endl;
 
-	_getch();
+  	std::cin.get();  //Used for pausing the program until keyboard input
 
 	return 0;
 }
