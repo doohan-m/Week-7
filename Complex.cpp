@@ -1,6 +1,6 @@
 #include <iostream>
 #include <math.h>
-#include "complex.h"
+#include "Complex.hpp"
 
 using namespace std;
 int Complex::count = 0;
@@ -22,15 +22,16 @@ Complex::~Complex()
 	cout << "Object " << --count << " is destroyed " << endl;
 }
 
-/*
+
 // Copy constructor
-Complex::Complex(Complex& a)
+/*Complex::Complex(Complex& a)
 {
 	Real = a.Real;
 	Imag = a.Imag;
 	count++;
-}
-*/
+	std::cout << "Copy constructor called on a = " << a << std::endl;
+}*/
+
 
 double Complex::Modulus()
 {
@@ -62,7 +63,7 @@ Complex Complex::operator+(const Complex&a)
 // Non-member function
 Complex operator+(const Complex&a, const Complex& b)
 {
-	return Complex(a.Real+b.Real, a.Imag + b.Imag);
+	return Complex(a.Real + b.Real, a.Imag + b.Imag);
 }
 
 

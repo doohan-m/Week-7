@@ -1,6 +1,5 @@
 #include <iostream>
-#include <conio.h>
-#include "complex.h"
+#include "Complex.hpp"
 
 using namespace std;
 int main()
@@ -10,16 +9,17 @@ int main()
 	Complex C;
 	Complex D;
 
-	C = A.operator+(B);//both these lines call exactly the same operator overloaded functions
+	C = A.operator+(B);//both examples of addition
+	// call exactly the same operator overloaded function
 
 	cout << A << " + " << B << " = " << C << endl;
 
-	_getch();
+  	std::cin.get();  //Used for pausing the program until keyboard input
 
 	D = A + B;
 	cout << A << " + " << B << " = " << D << endl;
 
-	_getch();
+  	std::cin.get();  //Used for pausing the program until keyboard input
 	return 0;
 }
 

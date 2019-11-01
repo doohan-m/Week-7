@@ -14,7 +14,7 @@ private:
 public:
 	Complex();// default constructor
 	~Complex(); // destructor
-//	Complex(Complex& a); // Copy constructor (for when constructor invoked by a function call).
+	//Complex(Complex& a); // Copy constructor (for when constructor invoked by a function call).
 	Complex(double real, double imag);
 	double Modulus();
 	double Phase();
@@ -32,9 +32,12 @@ public:
 };
 
 
-/* A.operator+(B) only can work when we have access to the class representing the LHS argument.
-Hence, we put the friend declaration inside the class header, but then we must define the freidn function outside the class, ie. not as Class::function.
-Preferred method is to write the operator as a member function, but sometimes we don't have access to the member's LHS object's class.
+/* A.operator+(B) only can work when we have access to the class 
+representing the LHS argument. Hence, we put the friend declaration
+inside the class header, but then we must define the friend function 
+outside the class, ie. not as Class::function. Preferred method is 
+to write the operator as a member function, but sometimes we don't 
+have access to the member's LHS object's class.
 */
 
-#endif
+#endif // COMPLEX_H
