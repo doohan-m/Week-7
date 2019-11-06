@@ -10,16 +10,25 @@ int main()
 	Complex D;
 
 	C = A.operator+(B);//both examples of addition
-	// call exactly the same operator overloaded function
+	// call the member operator overloaded function
 
 	cout << A << " + " << B << " = " << C << endl;
 
   	std::cin.get();  //Used for pausing the program until keyboard input
 
 	D = A + B;
+	// Call exactly the same member operator overloaded function.
 	cout << A << " + " << B << " = " << D << endl;
 
   	std::cin.get();  //Used for pausing the program until keyboard input
+
+	D = operator+(A, B);
+	// This approach will call the non-member function, but needs the 
+	// friend declaration inside the class
+	cout << A << " + " << B << " = " << D << endl;
+
+  	std::cin.get();  //Used for pausing the program until keyboard input	
+
 	return 0;
 }
 

@@ -27,7 +27,7 @@
             "command": "/usr/bin/g++",
             "args": [
                 "-g",
-                "${file}",
+                "${file}", "Complex.cpp", "Complex.hpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

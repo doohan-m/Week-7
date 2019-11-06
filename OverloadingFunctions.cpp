@@ -20,8 +20,8 @@ float doSomeOperation (float a, float b)
 
 int main ()
 {
-  int x=5,y=2;
-  double n=5.0,m=2.0;
+  auto x=5,y=2;
+  auto n=5.4,m=2.2;
   float a = 4.0, b = 3.1;
   cout << doSomeOperation (x,y) << '\n';
   cout << doSomeOperation (n,m) << '\n';

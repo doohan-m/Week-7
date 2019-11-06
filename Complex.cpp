@@ -57,12 +57,14 @@ void Complex::Print()
 // Member function, LHS is the object itself, RHS is incoming object.
 Complex Complex::operator+(const Complex&a)
 {
+	std::cout << "Calling member function" << std::endl;
 	return Complex(this->Real + a.Real, this->Imag + a.Imag);
 }
 
 // Non-member function
 Complex operator+(const Complex&a, const Complex& b)
 {
+	std::cout << "Calling non-member function" << std::endl;
 	return Complex(a.Real + b.Real, a.Imag + b.Imag);
 }
 
